@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.container {
+    display: grid;
+    background-color: blueviolet;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    font-size: 20px;
+    color: antiquewhite;
+    grid-template-areas: 
+        "head head"
+        "aboutme aboutme"
+        "SchoolEdu Undergrad"
+        "Futureplan Futureplan";
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto auto auto; 
+    gap: 20px;
+    padding: 12px 10px;                 
+}
+
+
+.head {
+    grid-area: head;
+    display: grid;
+    grid-template-columns: 1fr auto; 
+    align-items: center;
+    text-align: center;
+    background-color: rgb(70, 70, 77);
+    border-radius: 15px;
+    padding: 15px 20px;
+}
+
+
+.navbar {
+    display: grid;
+    justify-content: end; 
+}
+
+
+.navbar ul {
+    display: grid;
+    grid-auto-flow: column; 
+    gap: 20px;
+    list-style: none;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 12px;
+    transition: 0.3s ease-in-out;
+}
+
+
+.navbar ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+
+.aboutMe, .SchoolEdu, .Undergrad, .UpcomingPlans {
+    width: 100%;
+    text-align: center;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.aboutMe {
+    grid-area: aboutme;
+    background-color: darkred;
+}
+.SchoolEdu {
+    grid-area: SchoolEdu;
+    background-color: crimson;
+}
+.Undergrad {
+    grid-area: Undergrad;
+    background-color: brown;
+}
+.UpcomingPlans {
+    grid-area: Futureplan;
+    background-color: rgb(24, 1, 1);
+}
+
+
+@media screen and (max-width: 768px) {
+    .container {
+        grid-template-areas: 
+            "head"
+            "aboutme"
+            "SchoolEdu"
+            "Undergrad"
+            "Futureplan";
+        grid-template-columns: 1fr; 
+    }
+
+    
+    .navbar ul {
+        display: none; 
+        position: absolute;
+        top: 50px;
+        right: 0;
+        background-color: rgb(70, 70, 77);
+        width: 100%;
+        text-align: center;
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    
+    .navbar ul.active {
+        display: flex;
+    }
+
+    .navbar ul li {
+        padding: 10px;
+    }
+
+
+    .hamburger {
+        display: block;
+        font-size: 30px;
+        cursor: pointer;
+    }
+}
+ul{
+    list-style: none;
+}
